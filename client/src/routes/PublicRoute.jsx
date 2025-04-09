@@ -1,8 +1,8 @@
 import { Navigate, Outlet } from "react-router-dom";
-import { useUser } from "@clerk/clerk-react";
+import { useAuth } from "@clerk/clerk-react";
 
 export const PublicRoute = () => {
-  const { isSignedIn, isLoaded } = useUser();
+  const { isSignedIn, isLoaded } = useAuth();
 
   if (!isLoaded) {
     // Optional: Show a loading state while Clerk checks auth
